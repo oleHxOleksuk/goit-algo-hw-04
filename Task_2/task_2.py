@@ -9,12 +9,8 @@ def get_cats_info(path):
                     pet_list.append(new_dict)
                 else:
                     return print('Incorrect data format')
-     
-
     except FileNotFoundError:
-        return print('file not found')
+        return print(f'file {path} not found')
     return pet_list
-
-
 
 print(get_cats_info('./Task_2/cats_file.txt'))
