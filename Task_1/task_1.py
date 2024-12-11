@@ -1,5 +1,3 @@
-path = './Task_1/for_task_1.txt'
-
 def total_salary(path):
     total = 0
     count = 0
@@ -21,8 +19,7 @@ def total_salary(path):
         else:
             return print('There is no salary data')
     except FileNotFoundError:
-        return print('file not found')
+        return print(f'file {path} not found')
             
-
 total, average = total_salary("./Task_1/for_task_1.txt")
 print(f"Загальна сума заробітної плати: {int(total)}, Середня заробітна плата: {int(average)}")
