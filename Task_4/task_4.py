@@ -3,7 +3,7 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, *args
 
-def add_contact(args, contacts):
+def add_contact(args:list, contacts:dict):
     name, phone = args
     contacts[name] = phone
     return "Contact added."
@@ -23,6 +23,15 @@ def show_phone(args:list, contacts:dict):
         return "Contact does not exist"
     else:
         return contacts[name]
+    
+def change_contact(args:list, contacts:dict):
+    if contacts:
+        name, phone = args
+        if name in contacts:
+            contacts[name] = phone
+            return "Contact updated."
+        else:
+            return "Contact does not exist"
 
 
 def main():
@@ -43,6 +52,8 @@ def main():
             print(show_all(contacts))
         elif command == "phone":
             print(show_phone(args, contacts))
+        elif command == "change":
+            print(change_contact(args, contacts))
         else:
             print("Invalid command.")
 
