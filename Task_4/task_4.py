@@ -10,9 +10,13 @@ def add_contact(args, contacts):
 
 def show_all(contacts:dict):
     if contacts:
-        return contacts
+        all_contact = "Contcts:"
+        for name,phone in contacts.items():
+            all_contact += f"\n{name}:{phone}"
+        return all_contact
     else:
         return "Is not contacts"
+    
 def show_phone(args:list, contacts:dict):
     name = args[0]
     if name not in contacts:
