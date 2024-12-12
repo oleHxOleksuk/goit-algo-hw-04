@@ -29,7 +29,7 @@ def change_contact(args:list, contacts:dict):
         name, phone = args
         if name in contacts:
             contacts[name] = phone
-            return "Contact updated."
+            return f"Contact {name} updated number {phone}."
         else:
             return "Contact does not exist"
 
